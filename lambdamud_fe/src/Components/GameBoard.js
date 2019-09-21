@@ -6,12 +6,22 @@ class GameBoard extends React.Component{
     this.state ={
 
     }
+
+    this.canvasRef = React.createRef();
+  }
+
+  componentDidMount() {
+    const canvas = this.refs.canvas
+    const ctx = canvas.getContext("2d")
+    ctx.font="30px Arial"
+    ctx.fillText("Hello World", 100, 50)
   }
 
   render(){
     return(
       <div>
         <h1> Game Board </h1>
+        <canvas className="game_board" ref="canvas" width={640} height={425} />
       </div>
     )
   }
