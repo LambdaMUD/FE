@@ -1,6 +1,7 @@
 import React from 'react';
 import GameTitle from './GameTitle';
 import GameBoard from './GameBoard';
+import GameInfo from './GameInfo';
 
 class Game extends React.Component{
   constructor(props){
@@ -15,7 +16,11 @@ class Game extends React.Component{
     return(
       <div>
         <GameTitle />
-        <GameBoard />
+        <div className="game_container">
+          <GameBoard />
+          <GameInfo />
+        </div>
+
       </div>
     )
   }
