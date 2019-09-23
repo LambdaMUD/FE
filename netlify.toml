@@ -1,9 +1,9 @@
 [build]
-base="lambdamud_fe"
+base="lambdamud_fe/"
 publish="lambdamud_fe/build"
 command="yarn build"
 
 [[redirects]]
-from="/"
+from="/*"
 to="/index.html"
 status=200
