@@ -1,12 +1,18 @@
-import React from 'react';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
 
-
-import Game from './Components/Game';
+import Game from "./Components/Game";
+import Register from "./Components/auth/register";
+import Login from "./Components/auth/Login";
 
 function App() {
   return (
-    <div className="App">
-      <Game />
+    <div className='App'>
+      <Switch>
+        <Route path='/register' component={Register} />
+        <Route path='/login' component={Login} />
+        <Route exact path='/' component={Game} />
+      </Switch>
     </div>
   );
 }

@@ -1,4 +1,11 @@
+.game_board_container{
+  width: 60%;
+}
+
+.game_board_container h1{
+  font-family: $AlfaSlab;
+}
+
 .game_board{
   border: 1px solid black;
-  background: black;
 }
