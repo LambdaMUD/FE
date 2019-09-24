@@ -11,7 +11,7 @@ function App() {
       <Switch>
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />
-        <Route exact path='/' component={Game} />
+        <Route exact path='/gameboard' component={Game} />
       </Switch>
     </div>
   );
