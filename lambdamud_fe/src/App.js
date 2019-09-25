@@ -10,7 +10,7 @@ function App() {
   return (
     <div className='App'>
       <Switch>
-        <Route path='/' component={Landing} />
+        <Route exact path='/' component={Landing} />
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />
         <Route path='/gameboard' component={Game} />
