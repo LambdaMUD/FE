@@ -1,5 +1,5 @@
 [build]
-base="lambdamud_fe"
+base="lambdamud_fe/"
 publish="lambdamud_fe/build"
 command="yarn build"
 
