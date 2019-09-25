@@ -58,10 +58,11 @@ export const FormText = styled.p`
 `;
 
 export const FormHeader = styled.h1`
-    color: #bac0ca;
+    color: #808080;
     font-family: "Saira Stencil One", cursive;
     font-size: 3.5em;
     margin-bottom: 1.2em;
+    margin-top: 1.2em;
 `;
 
 export const FormBackground = styled.div`
@@ -139,6 +140,32 @@ export const Castle = styled.div`
         box-shadow: 120px 15px 75px 10px gray inset,
             -150px -20px 75px 10px gray inset;
     }
+`;
+
+export const LandingHeader = styled.h1`
+    color: #808080;
+    font-family: "Saira Stencil One", cursive;
+    font-size: 3.5em;
+    height: 1.5em;
+    margin: 67.2px 0;
+`;
+
+export const LandingText = styled.p`
+    color: #bac0ca;
+    font-size: 20px;
+    font-family: "Saira Stencil One", cursive;
+    display: flex;
+    flex-direction: column;
+    flex-warap: wrap;
+    width: 100px;
+    height: 50px;
+    margin: 0 auto;
+`;
+
+export const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 350px;
 `;
 
 
