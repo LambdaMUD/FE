@@ -18,8 +18,8 @@ export const Room = styled.div`
   background-image: url(${grass});
   border: 2px solid;
   text-align: center;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
 
 `;
 class GameBoard extends React.Component{

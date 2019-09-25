@@ -13,78 +13,78 @@
 
 .northsoutheastwest{
     border-image-source: url("../public/images/grey_brick.png");
-    border-image-slice: 20 20 20 20;
-    border-image-width: 20px 20px 20px 20px;
+    border-image-slice: 10 10 10 10;
+    border-image-width: 10px 10px 10px 10px;
 }
 .northsoutheast{
     border-image-source: url("../public/images/grey_brick.png");
-    border-image-slice: 20 20 20 0;
-    border-image-width: 20px 20px 20px 0;
+    border-image-slice: 10 10 10 0;
+    border-image-width: 10px 10px 10px 0;
 }
 .northsouthwest{
     border-image-source: url("../public/images/grey_brick.png");
-    border-image-slice: 20 0 20 20;
-    border-image-width: 20px 0 20px 20px;
+    border-image-slice: 10 0 10 10;
+    border-image-width: 10px 0 10px 10px;
 }
 .northeastwest{
     border-image-source: url("../public/images/grey_brick.png");
-    border-image-slice: 20 20 0 20;
-    border-image-width: 20px 20px 0 20px;
+    border-image-slice: 10 10 0 10;
+    border-image-width: 10px 10px 0 10px;
 }
 .northsouth{
     border-image-source: url("../public/images/grey_brick.png");
-    border-image-slice: 20 0 20 0;
-    border-image-width: 20px 0 20px 0;
+    border-image-slice: 10 0 10 0;
+    border-image-width: 10px 0 10px 0;
 }
 .northeast{
     border-image-source: url("../public/images/grey_brick.png");
-    border-image-slice: 20 20 0 0;
-    border-image-width: 20px 20px 0 0;
+    border-image-slice: 10 10 0 0;
+    border-image-width: 10px 10px 0 0;
 }
 .northwest{
     border-image-source: url("../public/images/grey_brick.png");
-    border-image-slice: 20 0 0 20;
-    border-image-width: 20px 0 0 20px;
+    border-image-slice: 10 0 0 10;
+    border-image-width: 10px 0 0 10px;
 }
 .southeastwest{
     border-image-source: url("../public/images/grey_brick.png");
-    border-image-slice: 0 20 20 20;
-    border-image-width: 0 20px 20px 20px;
+    border-image-slice: 0 10 10 10;
+    border-image-width: 0 10px 10px 10px;
 }
 .southeast{
   border-image-source: url("../public/images/grey_brick.png");
-  border-image-slice: 0 20 20 0;
-  border-image-width: 0 20px 20px 0;
+  border-image-slice: 0 10 10 0;
+  border-image-width: 0 10px 10px 0;
 }
 .southwest{
   border-image-source: url("../public/images/grey_brick.png");
-  border-image-slice: 0 0 20 20;
-  border-image-width: 0 0 20px 20px;
+  border-image-slice: 0 0 10 10;
+  border-image-width: 0 0 10px 10px;
 }
 .eastwest{
   border-image-source: url("../public/images/grey_brick.png");
-  border-image-slice: 0 20 0 20;
-  border-image-width: 0 20px 0 20px;
+  border-image-slice: 0 10 0 10;
+  border-image-width: 0 10px 0 10px;
 }
 .north{
   border-image-source: url("../public/images/grey_brick.png");
-  border-image-slice: 20 0 0 0;
-  border-image-width: 20px 0 0 0;
+  border-image-slice: 10 0 0 0;
+  border-image-width: 10px 0 0 0;
 }
 .south{
   border-image-source: url("../public/images/grey_brick.png");
-  border-image-slice: 0 0 20 0;
-  border-image-width: 0 0 20px 0;
+  border-image-slice: 0 0 10 0;
+  border-image-width: 0 0 10px 0;
 }
 .east{
   border-image-source: url("../public/images/grey_brick.png");
-  border-image-slice: 0 20 0 0;
-  border-image-width: 0 20px 0 0;
+  border-image-slice: 0 10 0 0;
+  border-image-width: 0 10px 0 0;
 }
 .west{
   border-image-source: url("../public/images/grey_brick.png");
-  border-image-slice: 0 0 0 20;
-  border-image-width: 0 0 0 20px;
+  border-image-slice: 0 0 0 10;
+  border-image-width: 0 0 0 10px;
 }
 
 
@@ -93,7 +93,7 @@
 
 // .north {
 //   border-image-source: url("../public/images/grey_brick.png");
-//   border-image-slice: 20 0 0 0;
+//   border-image-slice: 10 0 0 0;
 //   border-image-width: 20px 0 0 0;
 // }
 
