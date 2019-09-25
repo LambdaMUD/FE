@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 
 import Game from "./Components/Game";
 import Register from "./Components/auth/register";
-import Login from "./Components/Login/Login";
+import Login from "./Components/auth/Login";
 
 function App() {
   return (

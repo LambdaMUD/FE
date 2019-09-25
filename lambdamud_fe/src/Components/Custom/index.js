@@ -6,7 +6,7 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 90%;
     align-self: center;
     magrin: 0 auto;
 `;
@@ -24,13 +24,11 @@ export const FormInput = styled.input`
 
 export const FormLabel = styled.label`
     width: 50%;
-    border: 1px solid black;
-    border-radius: 50px;
     height: 3em;
     display: flex;
     justify-content: left;
     align-items: center;
-    padding-left: 1.5em;
+    padding-left: 5.5em;
     margin-bottom: 3em;
 `;
 
@@ -52,7 +50,7 @@ export const FormSubmit = styled.button`
 `;
 
 export const FormText = styled.p`
-    color: black;
+    color: #bac0ca;
     font-size: 1em;
     margin-top: 1.5em;
     font-family: "Saira Stencil One", cursive;
@@ -73,9 +71,8 @@ export const FormBackground = styled.div`
 `;
 
 export const Background = styled.div`
-    border: 1px solid black;
     background-image: url(${img});
-    background-size: cover;
+    /*background-size: cover;*/
     background-position: center;
     background-repeat: no-repeat;
     box-shadow: 10px 20px 80px 10px gray inset, -10px -20px 80px 10px gray inset;
@@ -87,20 +84,20 @@ export const Background = styled.div`
         min-width: 100vw;
         max-width: 1080px;
         height: 100vh;
-        box-shadow: 60px 20px 45px 10px black inset,
-            -60px -20px 45px 10px black inset;
+        box-shadow: 60px 20px 45px 10px gray inset,
+            -60px -20px 45px 10px gray inset;
     }
 
     @media (min-width: 1000px) {
         min-width: 1000px;
         max-width: 1080px;
-        box-shadow: 120px 15px 75px 10px black inset,
-            -150px -20px 75px 10px black inset;
+        box-shadow: 120px 15px 75px 10px gray inset,
+            -150px -20px 75px 10px gray inset;
     }
 `;
 
 export const Body = styled.div`
-  background-color: black;
+  background-color: gray;
   display: flex;
   justify-content: center;
   height: 100vh;
