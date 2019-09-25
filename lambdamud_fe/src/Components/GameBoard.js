@@ -3,7 +3,8 @@ import axios from 'axios';
 import styled from 'styled-components';
 import grass from '../public/images/green_grass.png';
 import brick from '../public/images/grey_brick.png';
-import golem from '../public/images/Characters/golem.png';
+import golem from '../public/images/Characters/wizard.png';
+
 
 export const Container = styled.div`
   margin-top: 100px;
@@ -28,7 +29,7 @@ class GameBoard extends React.Component{
   constructor(props){
     super(props)
     this.state ={
-      mazeInfo: []
+      mazeInfo: [],
     }
   }
 
@@ -50,6 +51,7 @@ class GameBoard extends React.Component{
   }
 
   render(){
+    console.log("player", this.state.player)
     const { rows, columns, maze } = this.state.mazeInfo;
     const mazeRows = [];
     for (let i = 0; i < rows; i++) {
@@ -58,14 +60,14 @@ class GameBoard extends React.Component{
       mazeRows.push(rowFiltered);
     }
 
-  const player = { row: 0, column: 0 };
     return(
       <Container>
+
       {mazeRows.map(r => (
         <Row>
           {r.map(room => {
             return (<div>
-              {player.row === room.row && player.column === room.column ? (
+              {this.props.player.row === room.row && this.props.player.column === room.column ? (
                 <Room
                   className={(room.wall_n ? "north" : "")+ (room.wall_s ? "south" : "")+ (room.wall_e ? "east" : "") + (room.wall_w ? "west" : "")}
                   north={room.wall_n}
