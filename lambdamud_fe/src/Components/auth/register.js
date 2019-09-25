@@ -25,12 +25,12 @@ const Register = props => {
     axios
       .post(endpoint, user)
       .then(response => {
-        console.log(response.data);
+        localStorage.setItem("authToken", response.data.key);
         setUsername("");
         setPassword1("");
         setPassword2("");
         setErrorText("");
-        props.history.push("/login");
+        props.history.push("/gameboard");
       })
       .catch(error => {
         console.log(error.response.data);
