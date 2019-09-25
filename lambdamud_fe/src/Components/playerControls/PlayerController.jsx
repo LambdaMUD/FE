@@ -18,13 +18,13 @@ class PlayerController extends React.Component{
 
     _handleKeyPress = e => {
         if(e.key === "w"){
-            console.log("move up")
+            this.props.movePlayer("n")
         }else if(e.key === "a"){
-            console.log("move left")
+            this.props.movePlayer("w")
         }else if(e.key === "s"){
-            console.log("move down")
+            this.props.movePlayer("s")
         }else if(e.key === "d"){
-            console.log("move right")
+            this.props.movePlayer("e")
         }
     }
 
