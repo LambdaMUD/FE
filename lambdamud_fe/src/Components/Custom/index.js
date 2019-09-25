@@ -59,10 +59,9 @@ export const FormText = styled.p`
 `;
 
 export const FormHeader = styled.h1`
-    color: black;
+    color: #bac0ca;
     font-family: "Saira Stencil One", cursive;
     font-size: 3.5em;
-    color: #016b18;
     margin-bottom: 1.2em;
 `;
 
@@ -82,6 +81,7 @@ export const Background = styled.div`
     box-shadow: 10px 20px 80px 10px gray inset, -10px -20px 80px 10px gray inset;
     display: flex;
     justify-content: center;
+    opacity: 0.8;
 
     @media (min-width: 600px) {
         min-width: 100vw;
