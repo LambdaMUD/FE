@@ -18,7 +18,7 @@ export const Row = styled.div`
   display: flex;
 `;
 export const Room = styled.div`
-  background-image: url(${grass});
+
   border: 2px solid;
   text-align: center;
   width: 75px;
@@ -59,17 +59,20 @@ class GameBoard extends React.Component{
       rowFiltered.sort((a,b) => a.column - b.column)
       mazeRows.push(rowFiltered);
     }
-
+    console.log(this.state.mazeInfo.rows)
+    console.log(this.state.mazeInfo.columns)
     return(
       <Container>
 
       {mazeRows.map(r => (
         <Row>
           {r.map(room => {
+            console.log(room)
             return (<div>
-              {this.props.player.row === room.row && this.props.player.column === room.column ? (
+              {this.props.player && this.props.player.row === room.row && this.props.player.column === room.column ? (
                 <Room
-                  className={(room.wall_n ? "north" : "")+ (room.wall_s ? "south" : "")+ (room.wall_e ? "east" : "") + (room.wall_w ? "west" : "")}
+                  className={(room.wall_n ? "north" : "")+ (room.wall_s ? "south" : "")+ (room.wall_e ? "east" : "") + (room.wall_w ? "west" : "") + " room "}
+                  id={(room.row === 9 ? "end": "")+(room.colum===9 ? "column": "")}
                   north={room.wall_n}
                   south={room.wall_s}
                   east={room.wall_e}
@@ -79,7 +82,8 @@ class GameBoard extends React.Component{
                 </Room>
               ) : (
                 <Room
-                  className={(room.wall_n ? "north" : "")+ (room.wall_s ? "south" : "")+ (room.wall_e ? "east" : "")+ (room.wall_w ? "west" : "")}
+                  className={(room.wall_n ? "north" : "")+ (room.wall_s ? "south" : "")+ (room.wall_e ? "east":"")+ (room.wall_w ? "west" : "")+ " room " + (room.row === 10? "end": "")+(room.column === 10 ? "room" : "")}
+                  id={(room.row === 9? "end": "")+(room.column ===9 ? "room": "")}
                   north={room.wall_n}
                   south={room.wall_s}
                   east={room.wall_e}
