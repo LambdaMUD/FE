@@ -26,39 +26,21 @@ export const Room = styled.div`
 class GameBoard extends React.Component{
   constructor(props){
     super(props)
-    this.state ={
-      mazeInfo: [],
-    }
   }
 
-  componentDidMount() {
-    axios
-      .post("https://lambdamud-be.herokuapp.com/api/make_maze/", {
-        "rows": 10,
-        "columns": 10
-      })
-      .then(res => {
-        console.log(res.data)
-        this.setState({
-          mazeInfo: res.data
-        })
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }
+
 
   render(){
-    console.log("player", this.state.player)
-    const { rows, maze } = this.state.mazeInfo;
+    console.log(this.props.player)
+    console.log('golem', golem)
+    const { rows, maze } = this.props.mazeInfo;
     const mazeRows = [];
     for (let i = 0; i < rows; i++) {
       let rowFiltered = maze.filter(room => room.row === i)
       rowFiltered.sort((a,b) => a.column - b.column)
       mazeRows.push(rowFiltered);
     }
-    console.log(this.state.mazeInfo.rows)
-    console.log(this.state.mazeInfo.columns)
+
     return(
       <Container>
 
