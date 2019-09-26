@@ -1,16 +1,14 @@
 import React from 'react';
-import axios from 'axios';
 import styled from 'styled-components';
-import golem from '../public/images/Characters/wizard.png';
-
 
 export const Container = styled.div`
-  margin-top: 100px;
   width: 80%;
+  margin: 0 auto;
   border: apx solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
 `;
 export const Row = styled.div`
   display: flex;
@@ -28,11 +26,7 @@ class GameBoard extends React.Component{
     super(props)
   }
 
-
-
   render(){
-    console.log(this.props.player)
-    console.log('golem', golem)
     const { rows, maze } = this.props.mazeInfo;
     const mazeRows = [];
     for (let i = 0; i < rows; i++) {
@@ -43,11 +37,9 @@ class GameBoard extends React.Component{
 
     return(
       <Container>
-
       {mazeRows.map(r => (
         <Row>
           {r.map(room => {
-            console.log(room)
             return (<div>
               {this.props.player && this.props.player.row === room.row && this.props.player.column === room.column ? (
                 <Room
@@ -58,7 +50,7 @@ class GameBoard extends React.Component{
                   east={room.wall_e}
                   west={room.wall_w}
                   player>
-                  <img src={golem} />
+                  <img src={this.props.chosenCharacter}/>
                 </Room>
               ) : (
                 <Room

@@ -1,4 +1,6 @@
 import React from 'react';
+import ChooseCharacter from './ChooseCharacter';
+
 
 class PlayerStats extends React.Component{
   constructor(props){
@@ -9,7 +11,8 @@ class PlayerStats extends React.Component{
   render(){
     return(
       <div className="player_stats_container">
-        <h1> Player Stats </h1>
+        <h1> Choose a character </h1>
+        <ChooseCharacter chooseCharacter={this.props.chooseCharacter} />
       </div>
     )
   }

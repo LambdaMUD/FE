@@ -1,3 +1,9 @@
 .game_info{
-  width: 30%;
+  min-width: 400px;
+  width: 40%;
+  margin: 0 auto;
+}
+
+@media(max-width: 1100px){
+  min-width: 400px
 }
