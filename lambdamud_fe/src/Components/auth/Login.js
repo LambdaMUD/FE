@@ -44,7 +44,7 @@ class Login extends Component {
         });
 
         axios
-            .post(`${config.baseURL}`, credentials)
+            .post(`${config.baseURL}/`, credentials)
             .then(res => {
                 localStorage.setItem("authToken", res.data.token);
                 this.setState({
@@ -52,7 +52,7 @@ class Login extends Component {
                     password: "",
                     loading: false
                 });
-                this.props.history.push(`/`);
+                this.props.history.push(`/gameboard`);
             })
             .catch(err => {
                 console.log(err.response);
