@@ -4,6 +4,12 @@ import GameTitle from "./GameTitle";
 import GameBoard from "./GameBoard";
 import GameInfo from "./GameInfo";
 import config from "../Config/index";
+import golem from "../public/images/Characters/golem.png";
+import enchantress from "../public/images/Characters/enchantress.png";
+import female_warrior from "../public/images/Characters/female_warrior.png";
+import knight from "../public/images/Characters/knight.png";
+import wizard from "../public/images/Characters/wizard.png";
+
 class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +17,8 @@ class Game extends React.Component {
       id: "",
       mazeInfo: [],
       players: [],
-      player: null
+      player: null,
+      chosenCharacter: wizard
     };
   }
   componentDidMount() {
@@ -82,14 +89,49 @@ class Game extends React.Component {
         console.log(err);
       });
   };
+
+  chooseCharacter = character => {
+    switch (character) {
+      case "golem":
+        this.setState({
+          chosenCharacter: golem
+        });
+        break;
+      case "enchantress":
+        this.setState({
+          chosenCharacter: enchantress
+        });
+        break;
+      case "female_warrior":
+        this.setState({
+          chosenCharacter: female_warrior
+        });
+        break;
+      case "knight":
+        this.setState({
+          chosenCharacter: knight
+        });
+        break;
+      case "wizard":
+        this.setState({
+          chosenCharacter: wizard
+        });
+        break;
+      default:
+        return;
+    }
+  };
   render() {
-    console.log(this.state.player);
     return (
       <div>
         <GameTitle />
         <div className='game_container'>
-          <GameBoard mazeInfo={this.state.mazeInfo} player={this.state.player} />
-          <GameInfo movePlayer={this.movePlayer} players={this.state.players} />
+          <GameBoard
+            chosenCharacter={this.state.chosenCharacter}
+            mazeInfo={this.state.mazeInfo}
+            player={this.state.player}
+          />
+          <GameInfo chooseCharacter={this.chooseCharacter} movePlayer={this.movePlayer} players={this.state.players} />
         </div>
       </div>
     );

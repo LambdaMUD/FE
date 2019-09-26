@@ -1,0 +1,18 @@
+.golem, .female_warrior, .enchantress, .wizard, .knight{
+  border-bottom: 2px solid red;
+}
+
+.character{
+  margin-right: 10px;
+}
+
+.character_container{
+  min-width: 400px;
+  margin: 0 auto;
+}
+
+@media(max-width: 1100px){
+  .character{
+    margin-bottom: 30px;
+  }
+}
