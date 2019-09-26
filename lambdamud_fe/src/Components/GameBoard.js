@@ -1,8 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import grass from '../public/images/green_grass.png';
-import brick from '../public/images/grey_brick.png';
 import golem from '../public/images/Characters/wizard.png';
 
 
@@ -52,7 +50,7 @@ class GameBoard extends React.Component{
 
   render(){
     console.log("player", this.state.player)
-    const { rows, columns, maze } = this.state.mazeInfo;
+    const { rows, maze } = this.state.mazeInfo;
     const mazeRows = [];
     for (let i = 0; i < rows; i++) {
       let rowFiltered = maze.filter(room => room.row === i)
