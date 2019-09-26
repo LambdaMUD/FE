@@ -32,8 +32,8 @@ class Game extends React.Component {
       .post(
         `${config.baseURL}/make_maze/`,
         {
-          rows: 4,
-          columns: 4
+          rows: 10,
+          columns: 10
         },
         reqOptions
       )
