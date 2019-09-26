@@ -44,9 +44,9 @@ class Login extends Component {
         });
 
         axios
-            .post(`${config.baseURL}/login/`, credentials)
+            .post(`${config.baseURL}`, credentials)
             .then(res => {
-                localStorage.setItem("authToken", res.data.key);
+                localStorage.setItem("authToken", res.data.token);
                 this.setState({
                     username: "",
                     password: "",
