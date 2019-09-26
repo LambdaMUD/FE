@@ -3,9 +3,7 @@ import axios from "axios";
 import GameTitle from "./GameTitle";
 import GameBoard from "./GameBoard";
 import GameInfo from "./GameInfo";
-
 import config from "../Config/index";
-
 class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +14,6 @@ class Game extends React.Component {
       player: null
     };
   }
-
   componentDidMount() {
     const token = localStorage.getItem("authToken");
     if (!token) this.props.history.push(`/login`);
@@ -38,13 +35,13 @@ class Game extends React.Component {
         reqOptions
       )
       .then(response => {
-        console.log(response.data);
+        const mazeInfo = response.data;
         axios
           .get(`${config.baseURL}/adv/reset/`, reqOptions)
           .then(res => {
-            console.log(res);
+            console.log("reset", res.data.row);
             this.setState({
-              mazeInfo: response.data,
+              mazeInfo: mazeInfo,
               player: {
                 row: res.data.row,
                 column: res.data.column
@@ -78,6 +75,7 @@ class Game extends React.Component {
         reqOptions
       )
       .then(res => {
+        console.log("res", res);
         this.setState({
           player: {
             row: res.data.row,
@@ -91,8 +89,8 @@ class Game extends React.Component {
         console.log(err);
       });
   };
-
   render() {
+    console.log(this.state.player);
     return (
       <div>
         <GameTitle />
@@ -104,5 +102,4 @@ class Game extends React.Component {
     );
   }
 }
-
 export default Game;
