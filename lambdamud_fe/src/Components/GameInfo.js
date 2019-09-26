@@ -7,7 +7,7 @@ const GameInfo = (props) => {
     <div className="game_info">
       <h1> Game Info </h1>
       <PlayerController movePlayer={props.movePlayer}/>
-      <PlayerStats />
+      <PlayerStats chooseCharacter={props.chooseCharacter} />
     </div>
   )
 }
