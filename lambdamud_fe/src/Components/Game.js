@@ -17,9 +17,6 @@ class Game extends React.Component {
   componentDidMount() {
     const token = localStorage.getItem("authToken");
     if (!token) this.props.history.push(`/login`);
-    console.log("token: ", token);
-    console.log(`token ${token}`);
-    // Authorization: "token 01b1d850b901ce65c5dfeb820457072a1a9a41cf"
     const reqOptions = {
       headers: {
         Authorization: `token ${token}`
@@ -39,7 +36,6 @@ class Game extends React.Component {
         axios
           .get(`${config.baseURL}/adv/reset/`, reqOptions)
           .then(res => {
-            console.log("reset", res.data.row);
             this.setState({
               mazeInfo: mazeInfo,
               player: {
@@ -62,7 +58,6 @@ class Game extends React.Component {
     if (!token) this.props.history.push(`/login`);
     const reqOptions = {
       headers: {
-        // Authorization: "token 01b1d850b901ce65c5dfeb820457072a1a9a41cf"
         Authorization: `token ${token}`
       }
     };
@@ -75,7 +70,6 @@ class Game extends React.Component {
         reqOptions
       )
       .then(res => {
-        console.log("res", res);
         this.setState({
           player: {
             row: res.data.row,
@@ -83,7 +77,6 @@ class Game extends React.Component {
           },
           players: res.data.players
         });
-        console.log(res);
       })
       .catch(err => {
         console.log(err);

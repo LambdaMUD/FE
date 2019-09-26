@@ -21,10 +21,6 @@ export const Room = styled.div`
   height: 75px;
 `;
 class GameBoard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     console.log(this.props.player);
     console.log("golem", golem);
@@ -38,12 +34,11 @@ class GameBoard extends React.Component {
 
     return (
       <Container>
-        {mazeRows.map(r => (
-          <Row>
-            {r.map(room => {
-              console.log(room);
+        {mazeRows.map((r, index) => (
+          <Row key={index}>
+            {r.map((room, index) => {
               return (
-                <div>
+                <div key={index}>
                   {this.props.player &&
                   this.props.player.row === room.row &&
                   this.props.player.column === room.column ? (

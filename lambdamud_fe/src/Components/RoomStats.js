@@ -17,8 +17,8 @@ class PlayerStats extends React.Component {
         ) : (
           <div>
             <p>Players in the Room</p>
-            {players.map(player => (
-              <div key={player.id}>{player}</div>
+            {players.map((player, index) => (
+              <div key={index}>{player}</div>
             ))}
           </div>
         )}
