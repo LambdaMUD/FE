@@ -10,15 +10,12 @@ import {
 } from "./Custom/index";
 import { Link } from "react-router-dom";
 import config from "../Config/index";
-<<<<<<< HEAD
-=======
 import golem from '../public/images/Characters/golem.png';
 import enchantress from '../public/images/Characters/enchantress.png';
 import female_warrior from '../public/images/Characters/female_warrior.png';
 import knight from '../public/images/Characters/knight.png';
 import wizard from '../public/images/Characters/wizard.png';
 
->>>>>>> a665eb880948fe5d7969af01ae65f09abf326d95
 
 class Game extends React.Component {
   constructor(props) {
