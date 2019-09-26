@@ -105,16 +105,27 @@ export const Body = styled.div`
   width: auto;
 `;
 
-
 export const NavWrapper = styled.nav`
-    border: 1px solid white;
-    width: 957.86px;
+    width: 100%;
     height: 50px;
+    margin-top: 10px;
     display: flex;
     justify-content: flex-end;
-    img {
-        object-fit: contain;
-    }
+`;
+
+export const NavSubmit = styled.button`
+  cursor: pointer;
+  width: 12.5%;
+  height: 35px;
+  border-radius: 50px;
+  border: 1px solid black;
+  margin-right: 15px;
+`;
+
+export const NavText = styled.p`
+    color: black;
+    font-size: 20px;
+    font-family: "Alfa Slab One", cursive;
 `;
 
 export const Castle = styled.div`

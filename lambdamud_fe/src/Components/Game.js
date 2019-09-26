@@ -3,7 +3,14 @@ import axios from "axios";
 import GameTitle from "./GameTitle";
 import GameBoard from "./GameBoard";
 import GameInfo from "./GameInfo";
+import {
+  NavWrapper,
+  NavSubmit,
+  NavText
+} from "./Custom/index";
+import { Link } from "react-router-dom";
 import config from "../Config/index";
+
 class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -93,6 +100,13 @@ class Game extends React.Component {
     console.log(this.state.player)
     return (
       <div>
+        <NavWrapper>
+          <NavSubmit>
+            <Link to="/login">
+              <NavText> Logout </NavText>
+            </Link>
+          </NavSubmit>
+        </NavWrapper>
         <GameTitle />
         <div className='game_container'>
           <GameBoard mazeInfo={this.state.mazeInfo} player={this.state.player} />
