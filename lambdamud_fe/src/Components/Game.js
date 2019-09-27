@@ -28,45 +28,9 @@ class Game extends React.Component {
       openModal: false
     };
   }
+
   componentDidMount() {
-    const token = localStorage.getItem("authToken");
-    if (!token) this.props.history.push(`/login`);
-    const reqOptions = {
-      headers: {
-        Authorization: `token ${token}`
-      }
-    };
-    axios
-      .post(
-        `${config.baseURL}/make_maze/`,
-        {
-          rows: 10,
-          columns: 10
-        },
-        reqOptions
-      )
-      .then(response => {
-        const mazeInfo = response.data;
-        axios
-          .get(`${config.baseURL}/adv/reset/`, reqOptions)
-          .then(res => {
-            this.setState({
-              mazeInfo: mazeInfo,
-              player: {
-                row: res.data.row,
-                column: res.data.column
-              },
-              username: res.data.name,
-              players: res.data.players
-            });
-          })
-          .catch(err => {
-            console.log(err);
-          });
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    this.makeMaze();
   }
 
   openModal = () => {
@@ -91,6 +55,7 @@ class Game extends React.Component {
       return;
     }
   };
+
   movePlayer = direction => {
     const token = localStorage.getItem("authToken");
     if (!token) this.props.history.push(`/login`);
@@ -122,32 +87,7 @@ class Game extends React.Component {
       });
   };
 
-  tryAgain = () => {
-    const token = localStorage.getItem("authToken");
-    if (!token) this.props.history.push(`/login`);
-    const reqOptions = {
-      headers: {
-        Authorization: `token ${token}`
-      }
-    };
-    axios
-      .get(`${config.baseURL}/adv/reset/`, reqOptions)
-      .then(res => {
-        this.setState({
-          player: {
-            row: res.data.row,
-            column: res.data.column
-          },
-          players: res.data.players,
-          openModal: false
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
-
-  newLevel = () => {
+  makeMaze = () => {
     const token = localStorage.getItem("authToken");
     if (!token) this.props.history.push(`/login`);
     const reqOptions = {
@@ -166,22 +106,44 @@ class Game extends React.Component {
       )
       .then(response => {
         const mazeInfo = response.data;
-        axios
-          .get(`${config.baseURL}/adv/reset/`, reqOptions)
-          .then(res => {
-            this.setState({
-              mazeInfo: mazeInfo,
-              player: {
-                row: res.data.row,
-                column: res.data.column
-              },
-              players: res.data.players,
-              openModal: false
-            });
-          })
-          .catch(err => {
-            console.log(err);
+        this.resetGame(mazeInfo);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
+  resetGame = (mazeInfo = null) => {
+    const token = localStorage.getItem("authToken");
+    if (!token) this.props.history.push(`/login`);
+    const reqOptions = {
+      headers: {
+        Authorization: `token ${token}`
+      }
+    };
+    axios
+      .get(`${config.baseURL}/adv/reset/`, reqOptions)
+      .then(res => {
+        if (mazeInfo) {
+          this.setState({
+            mazeInfo: mazeInfo,
+            player: {
+              row: res.data.row,
+              column: res.data.column
+            },
+            players: res.data.players,
+            openModal: false
           });
+        } else {
+          this.setState({
+            player: {
+              row: res.data.row,
+              column: res.data.column
+            },
+            players: res.data.players,
+            openModal: false
+          });
+        }
       })
       .catch(err => {
         console.log(err);
@@ -227,10 +189,10 @@ class Game extends React.Component {
             <Modal.Title>Choose An Option</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Button className='buttons' variant='primary' onClick={this.newLevel}>
-              New Level
+            <Button className='buttons' variant='primary' onClick={this.makeMaze}>
+              New Maze
             </Button>
-            <Button className='buttons' variant='primary' onClick={this.tryAgain}>
+            <Button className='buttons' variant='primary' onClick={() => this.resetGame(null)}>
               Try Again
             </Button>
           </Modal.Body>
