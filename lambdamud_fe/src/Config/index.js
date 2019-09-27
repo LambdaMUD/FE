@@ -1,5 +1,3 @@
-import axios from "axios";
-
-export default axios({
-    baseURL: 'https://lambdamud-be.herokuapp.com/api/'
-});
+export default {
+    baseURL: "https://lambdamud-be.herokuapp.com/api"
+   };
