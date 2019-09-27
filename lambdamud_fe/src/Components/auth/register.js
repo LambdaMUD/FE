@@ -92,14 +92,12 @@ const Register = props => {
                   <FontAwesomeIcon icon={faLock} />
                   <FormInput
                     type='password'
-                    placeholder='Type Password again'
+                    placeholder='Re-enter Password'
                     name='password2'
                     value={password2}
                     onChange={e => setPassword2(e.target.value)}
                   />
                 </FormLabel>
-
-              <FormText className='text-muted'>The passwords have to match.</FormText>
 
               <FormSubmit type='submit'>
                 Register
