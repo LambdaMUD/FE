@@ -3,22 +3,17 @@ import axios from "axios";
 import GameTitle from "./GameTitle";
 import GameBoard from "./GameBoard";
 import GameInfo from "./GameInfo";
-import {
-  NavWrapper,
-  NavSubmit,
-  NavText
-} from "./Custom/index";
+import { NavWrapper, NavSubmit, NavText } from "./Custom/index";
 import { Link } from "react-router-dom";
 import config from "../Config/index";
-import golem from '../public/images/Characters/golem.png';
-import enchantress from '../public/images/Characters/enchantress.png';
-import female_warrior from '../public/images/Characters/female_warrior.png';
-import knight from '../public/images/Characters/knight.png';
-import wizard from '../public/images/Characters/wizard.png';
+import golem from "../public/images/Characters/golem.png";
+import enchantress from "../public/images/Characters/enchantress.png";
+import female_warrior from "../public/images/Characters/female_warrior.png";
+import knight from "../public/images/Characters/knight.png";
+import wizard from "../public/images/Characters/wizard.png";
 
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal'
-
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
 class Game extends React.Component {
   constructor(props) {
@@ -36,9 +31,6 @@ class Game extends React.Component {
   componentDidMount() {
     const token = localStorage.getItem("authToken");
     if (!token) this.props.history.push(`/login`);
-    console.log("token: ", token);
-    console.log(`token ${token}`);
-    // Authorization: "token 01b1d850b901ce65c5dfeb820457072a1a9a41cf"
     const reqOptions = {
       headers: {
         Authorization: `token ${token}`
@@ -54,11 +46,10 @@ class Game extends React.Component {
         reqOptions
       )
       .then(response => {
-        const mazeInfo = response.data
+        const mazeInfo = response.data;
         axios
           .get(`${config.baseURL}/adv/reset/`, reqOptions)
           .then(res => {
-            console.log("reset", res.data.row);
             this.setState({
               mazeInfo: mazeInfo,
               player: {
@@ -81,25 +72,25 @@ class Game extends React.Component {
   openModal = () => {
     this.setState({
       openModal: true
-    })
-  }
+    });
+  };
 
   closeModal = () => {
     this.setState({
       openModal: false
-    })
-  }
+    });
+  };
 
   checkEnd = () => {
-    if (this.state.player.row === 9 && this.state.player.column === 9){
+    if (this.state.player.row === 9 && this.state.player.column === 9) {
       this.setState({
         finished: true,
         openModal: true
-      })
+      });
     } else {
-      return
+      return;
     }
-  }
+  };
   movePlayer = direction => {
     const token = localStorage.getItem("authToken");
     if (!token) this.props.history.push(`/login`);
@@ -117,7 +108,6 @@ class Game extends React.Component {
         reqOptions
       )
       .then(res => {
-        console.log("res", res)
         this.setState({
           player: {
             row: res.data.row,
@@ -125,8 +115,7 @@ class Game extends React.Component {
           },
           players: res.data.players
         });
-        this.checkEnd()
-        console.log("player", res);
+        this.checkEnd();
       })
       .catch(err => {
         console.log(err);
@@ -156,14 +145,11 @@ class Game extends React.Component {
       .catch(err => {
         console.log(err);
       });
-  }
+  };
 
   newLevel = () => {
     const token = localStorage.getItem("authToken");
     if (!token) this.props.history.push(`/login`);
-    console.log("token: ", token);
-    console.log(`token ${token}`);
-    // Authorization: "token 01b1d850b901ce65c5dfeb820457072a1a9a41cf"
     const reqOptions = {
       headers: {
         Authorization: `token ${token}`
@@ -179,11 +165,10 @@ class Game extends React.Component {
         reqOptions
       )
       .then(response => {
-        const mazeInfo = response.data
+        const mazeInfo = response.data;
         axios
           .get(`${config.baseURL}/adv/reset/`, reqOptions)
           .then(res => {
-            console.log("reset", res.data.row);
             this.setState({
               mazeInfo: mazeInfo,
               player: {
@@ -201,42 +186,40 @@ class Game extends React.Component {
       .catch(err => {
         console.log(err);
       });
-  }
+  };
 
-  chooseCharacter = (character) => {
-    switch(character){
+  chooseCharacter = character => {
+    switch (character) {
       case "golem":
         this.setState({
           chosenCharacter: golem
-        })
-        break
+        });
+        break;
       case "enchantress":
         this.setState({
           chosenCharacter: enchantress
-        })
-        break
+        });
+        break;
       case "female_warrior":
         this.setState({
           chosenCharacter: female_warrior
-        })
-        break
+        });
+        break;
       case "knight":
         this.setState({
           chosenCharacter: knight
-        })
-        break
+        });
+        break;
       case "wizard":
         this.setState({
           chosenCharacter: wizard
-        })
-        break
+        });
+        break;
       default:
-        return
+        return;
     }
-
-  }
+  };
   render() {
-    console.log(this.state.player)
     return (
       <div>
         <Modal show={this.state.openModal} onHide={this.closeModal}>
@@ -244,22 +227,22 @@ class Game extends React.Component {
             <Modal.Title>Choose An Option</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-          <Button className="buttons" variant="primary" onClick={this.newLevel}>
-            New Level
-          </Button>
-          <Button className="buttons" variant="primary" onClick={this.tryAgain}>
-            Try Again
-          </Button>
+            <Button className='buttons' variant='primary' onClick={this.newLevel}>
+              New Level
+            </Button>
+            <Button className='buttons' variant='primary' onClick={this.tryAgain}>
+              Try Again
+            </Button>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={this.closeModal}>
+            <Button variant='secondary' onClick={this.closeModal}>
               Close
             </Button>
           </Modal.Footer>
         </Modal>
         <NavWrapper>
           <NavSubmit>
-            <Link to="/login">
+            <Link to='/login'>
               <NavText> Logout </NavText>
             </Link>
           </NavSubmit>
@@ -267,10 +250,17 @@ class Game extends React.Component {
         <GameTitle />
         <div className='game_container'>
           <GameBoard
-          chosenCharacter={this.state.chosenCharacter} mazeInfo={this.state.mazeInfo}
-          player={this.state.player}
-          finished={this.state.finished} />
-        <GameInfo chooseCharacter={this.chooseCharacter} movePlayer={this.movePlayer} players={this.state.players} username={this.state.username ? this.state.username : ""} />
+            chosenCharacter={this.state.chosenCharacter}
+            mazeInfo={this.state.mazeInfo}
+            player={this.state.player}
+            finished={this.state.finished}
+          />
+          <GameInfo
+            chooseCharacter={this.chooseCharacter}
+            movePlayer={this.movePlayer}
+            players={this.state.players}
+            username={this.state.username ? this.state.username : ""}
+          />
         </div>
       </div>
     );
