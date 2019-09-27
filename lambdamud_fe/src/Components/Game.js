@@ -64,9 +64,9 @@ class Game extends React.Component {
               mazeInfo: mazeInfo,
               player: {
                 row: res.data.row,
-                column: res.data.column,
-                username: res.data.name
+                column: res.data.column
               },
+              username: res.data.name,
               players: res.data.players
             });
           })
@@ -271,7 +271,7 @@ class Game extends React.Component {
           chosenCharacter={this.state.chosenCharacter} mazeInfo={this.state.mazeInfo}
           player={this.state.player}
           finished={this.state.finished} />
-        <GameInfo chooseCharacter={this.chooseCharacter} movePlayer={this.movePlayer} players={this.state.players} username={this.state.player && this.state.player.username ? this.state.player.username : ""} />
+        <GameInfo chooseCharacter={this.chooseCharacter} movePlayer={this.movePlayer} players={this.state.players} username={this.state.username ? this.state.username : ""} />
         </div>
       </div>
     );
