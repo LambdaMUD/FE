@@ -18,9 +18,8 @@ export const FormInput = styled.input`
     height: 1.5em;
     font-size: 1em;
     width: 70%;
-    font-family: 'Saira Stencil One', cursive;
+    font-family: 'Alfa Slab One', cursive;
     background-color: #99b9e0;
-    padding-top: 0.3em;
 `;
 
 export const FormLabel = styled.label`
@@ -39,11 +38,10 @@ export const FormSubmit = styled.button`
   height: 2.5em;
   border-radius: 50px;
   font-size: 1em;
-  font-weight: bold;
   background-color: #8d7e7f;
   border: 1px solid #3d3832;
   color: #e4ebe5;
-  font-family: "Saira Stencil One", cursive;
+  font-family: "Alfa Slab One", cursive;
   &:hover {
     box-shadow: 5px 5px 20px rgba(255, 255, 255, 0.35);
     transition: box-shadow 0.1s ease-in-out;
@@ -54,7 +52,7 @@ export const FormText = styled.p`
     color: white;
     font-size: 1em;
     margin-top: 1.5em;
-    font-family: "Saira Stencil One", cursive;
+    font-family: "Alfa Slab One", cursive;
 `;
 
 export const FormHeader = styled.h1`
@@ -156,16 +154,17 @@ export const Castle = styled.div`
 
 export const LandingHeader = styled.h1`
     color: #808080;
-    font-family: "Saira Stencil One", cursive;
-    font-size: 3.5em;
+    font-family: "Alfa Slab One", cursive;
+    font-size: 3em;
     height: 1.5em;
     margin: 67.2px 0;
+    text-shadow: 2px 2px white;
 `;
 
 export const LandingText = styled.p`
     color: #bac0ca;
     font-size: 20px;
-    font-family: "Saira Stencil One", cursive;
+    font-family: "Alfa Slab One", cursive;
     display: flex;
     flex-direction: column;
     flex-warap: wrap;
