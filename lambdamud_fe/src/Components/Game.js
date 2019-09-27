@@ -3,6 +3,12 @@ import axios from "axios";
 import GameTitle from "./GameTitle";
 import GameBoard from "./GameBoard";
 import GameInfo from "./GameInfo";
+import {
+  NavWrapper,
+  NavSubmit,
+  NavText
+} from "./Custom/index";
+import { Link } from "react-router-dom";
 import config from "../Config/index";
 import golem from '../public/images/Characters/golem.png';
 import enchantress from '../public/images/Characters/enchantress.png';
@@ -133,6 +139,13 @@ class Game extends React.Component {
   render() {
     return (
       <div>
+        <NavWrapper>
+          <NavSubmit>
+            <Link to="/login">
+              <NavText> Logout </NavText>
+            </Link>
+          </NavSubmit>
+        </NavWrapper>
         <GameTitle />
         <div className='game_container'>
           <GameBoard chosenCharacter={this.state.chosenCharacter} mazeInfo={this.state.mazeInfo} player={this.state.player} />
