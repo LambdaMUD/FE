@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import config from "../../Config/index";
 import {
     Form,
@@ -42,7 +43,7 @@ class Login extends Component {
             loading: true
         });
 
-        config
+        axios
             .post(`${config.baseURL}/`, credentials)
             .then(res => {
                 localStorage.setItem("authToken", res.data.token);

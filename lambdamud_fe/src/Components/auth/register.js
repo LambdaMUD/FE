@@ -58,55 +58,60 @@ const Register = props => {
       });
   };
 
-    return (
-      <Body>
-            <Background>
-              <Form onSubmit={registerHandler}>
-                <FormHeader>Lambda MUD</FormHeader>
+  return (
+    <>
+      {ErrorText && <div>{ErrorText}</div>}
+    <Body>
+          <Background>
+            <Form onSubmit={registerHandler}>
+              <FormHeader>Lambda MUD</FormHeader>
 
-                  <FormLabel name="User Name">
-                    <FontAwesomeIcon icon={faUserCircle} />
-                    <FormInput
-                      type='text'
-                      placeholder='Enter your user name'
-                      name='username'
-                      value={username}
-                      onChange={e => setUsername(e.target.value)}
-                    />
-                  </FormLabel>
+                <FormLabel name="User Name">
+                  <FontAwesomeIcon icon={faUserCircle} />
+                  <FormInput
+                    type='text'
+                    placeholder='Enter your user name'
+                    name='username'
+                    value={username}
+                    onChange={e => setUsername(e.target.value)}
+                  />
+                </FormLabel>
 
-                  <FormLabel name="Password1">
-                    <FontAwesomeIcon icon={faLock} />
-                    <FormInput
-                      type='password'
-                      placeholder='Password'
-                      name='password1'
-                      value={password1}
-                      onChange={e => setPassword1(e.target.value)}
-                    />
-                  </FormLabel>
+                <FormLabel name="Password1">
+                  <FontAwesomeIcon icon={faLock} />
+                  <FormInput
+                    type='password'
+                    placeholder='Password'
+                    name='password1'
+                    value={password1}
+                    onChange={e => setPassword1(e.target.value)}
+                  />
+                </FormLabel>
 
-                  <FormLabel name="Password2">
-                    <FontAwesomeIcon icon={faLock} />
-                    <FormInput
-                      type='password'
-                      placeholder='Type Password again'
-                      name='password2'
-                      value={password2}
-                      onChange={e => setPassword2(e.target.value)}
-                    />
-                  </FormLabel>
-                  
-                <FormSubmit type='submit'>
-                  Submit
-                </FormSubmit>
-                <Link to="/login">
-                  <FormText>Already a MUDDER?</FormText>
-                </Link>
-            </Form>
-            </Background>
-        </Body>
-    );
+                <FormLabel name="Password2">
+                  <FontAwesomeIcon icon={faLock} />
+                  <FormInput
+                    type='password'
+                    placeholder='Type Password again'
+                    name='password2'
+                    value={password2}
+                    onChange={e => setPassword2(e.target.value)}
+                  />
+                </FormLabel>
+
+              <FormText className='text-muted'>The passwords have to match.</FormText>
+
+              <FormSubmit type='submit'>
+                Submit
+              </FormSubmit>
+              <Link to="/login">
+                <FormText>Already a MUDDER?</FormText>
+              </Link>
+          </Form>
+          </Background>
+      </Body>
+    </>
+  );
 };
 
 export default Register;
