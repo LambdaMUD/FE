@@ -93,7 +93,7 @@ class Login extends Component {
                         </FormSubmit>
 
                         <Link to="/register">
-                            <FormText>You have to register, to get in on the fun!</FormText>
+                            <FormText>Register to become a MUDDER</FormText>
                         </Link>
                     </Form>
                 </Background>

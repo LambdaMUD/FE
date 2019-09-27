@@ -1,6 +1,19 @@
 import React, { useState } from "react";
-import { Card, Button, Form } from "react-bootstrap";
 import axios from "axios";
+import {
+  Form,
+  FormInput,
+  FormSubmit,
+  FormText,
+  FormLabel,
+  FormHeader,
+  Background,
+  Body
+} from "../Custom/index";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle, faLock } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+
 
 const Register = props => {
   const [username, setUsername] = useState("");
@@ -48,48 +61,55 @@ const Register = props => {
   return (
     <>
       {ErrorText && <div>{ErrorText}</div>}
-      <Card style={{ width: "70%" }} className='Register'>
-        <Card.Header as='h5'>Register</Card.Header>
-        <Card.Body>
-          <Form onSubmit={registerHandler}>
-            <Form.Group controlId='formBasicText'>
-              <Form.Label>User Name</Form.Label>
-              <Form.Control
-                type='text'
-                placeholder='Enter your user name'
-                name='username'
-                value={username}
-                onChange={e => setUsername(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group controlId='formBasicPassword1'>
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type='password'
-                placeholder='Password'
-                name='password1'
-                value={password1}
-                onChange={e => setPassword1(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group controlId='formBasicPassword2'>
-              <Form.Label>Password Again</Form.Label>
-              <Form.Control
-                type='password'
-                placeholder='Type Password again'
-                name='password2'
-                value={password2}
-                onChange={e => setPassword2(e.target.value)}
-              />
-              <Form.Text className='text-muted'>The passwords have to match.</Form.Text>
-            </Form.Group>
+    <Body>
+          <Background>
+            <Form onSubmit={registerHandler}>
+              <FormHeader>Lambda MUD</FormHeader>
 
-            <Button variant='primary' type='submit'>
-              Submit
-            </Button>
+                <FormLabel name="User Name">
+                  <FontAwesomeIcon icon={faUserCircle} />
+                  <FormInput
+                    type='text'
+                    placeholder='Enter your user name'
+                    name='username'
+                    value={username}
+                    onChange={e => setUsername(e.target.value)}
+                  />
+                </FormLabel>
+
+                <FormLabel name="Password1">
+                  <FontAwesomeIcon icon={faLock} />
+                  <FormInput
+                    type='password'
+                    placeholder='Password'
+                    name='password1'
+                    value={password1}
+                    onChange={e => setPassword1(e.target.value)}
+                  />
+                </FormLabel>
+
+                <FormLabel name="Password2">
+                  <FontAwesomeIcon icon={faLock} />
+                  <FormInput
+                    type='password'
+                    placeholder='Type Password again'
+                    name='password2'
+                    value={password2}
+                    onChange={e => setPassword2(e.target.value)}
+                  />
+                </FormLabel>
+
+              <FormText className='text-muted'>The passwords have to match.</FormText>
+
+              <FormSubmit type='submit'>
+                Register
+              </FormSubmit>
+              <Link to="/login">
+                <FormText>Already a MUDDER?</FormText>
+              </Link>
           </Form>
-        </Card.Body>
-      </Card>
+          </Background>
+      </Body>
     </>
   );
 };

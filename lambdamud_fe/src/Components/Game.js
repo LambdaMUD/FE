@@ -16,7 +16,6 @@ import female_warrior from '../public/images/Characters/female_warrior.png';
 import knight from '../public/images/Characters/knight.png';
 import wizard from '../public/images/Characters/wizard.png';
 
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal'
 
