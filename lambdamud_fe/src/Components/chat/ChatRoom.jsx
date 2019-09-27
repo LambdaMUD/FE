@@ -28,7 +28,7 @@ class ChatRoom extends React.Component{
         messages: [
           ...this.state.messages,
           {
-            message: msg.message
+            ...msg
           }
         ]
       })
@@ -66,9 +66,9 @@ class ChatRoom extends React.Component{
     return(
       <ChatContainer>
         <Chat>
-          {messages.map(m => {
+          {messages.map((m, i) => {
             return (
-              <Message key="m.id" sent={true}>
+              <Message key={i} sent={true}>
                 {m.message}
               </Message>
             )
