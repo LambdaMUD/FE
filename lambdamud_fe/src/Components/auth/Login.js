@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import config from "../../Config/index";
 import {
     Form,
@@ -43,7 +42,7 @@ class Login extends Component {
             loading: true
         });
 
-        axios
+        config
             .post(`${config.baseURL}/`, credentials)
             .then(res => {
                 localStorage.setItem("authToken", res.data.token);
@@ -93,7 +92,7 @@ class Login extends Component {
                         </FormSubmit>
 
                         <Link to="/register">
-                            <FormText>You have to register, to get in on the fun!</FormText>
+                            <FormText>Register to become a MUDDER</FormText>
                         </Link>
                     </Form>
                 </Background>

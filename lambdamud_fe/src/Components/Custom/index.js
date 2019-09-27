@@ -51,7 +51,7 @@ export const FormSubmit = styled.button`
 `;
 
 export const FormText = styled.p`
-    color: #bac0ca;
+    color: white;
     font-size: 1em;
     margin-top: 1.5em;
     font-family: "Saira Stencil One", cursive;
@@ -59,10 +59,11 @@ export const FormText = styled.p`
 
 export const FormHeader = styled.h1`
     color: #808080;
-    font-family: "Saira Stencil One", cursive;
-    font-size: 3.5em;
+    font-family: "Alfa Slab One", cursive;
+    font-size: 4em;
     margin-bottom: 1.2em;
     margin-top: 1.2em;
+    text-shadow: 2px 2px white;
 `;
 
 export const FormBackground = styled.div`
