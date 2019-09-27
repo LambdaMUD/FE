@@ -1,5 +1,5 @@
 import React from "react";
-import RoomStats from "./RoomStats";
+import PlayerStats from "./PlayerStats";
 import PlayerController from "./playerControls/PlayerController.jsx";
 
 const GameInfo = props => {

@@ -4,7 +4,9 @@ import { Route, Switch } from "react-router-dom";
 import Game from "./Components/Game";
 import Register from "./Components/auth/register";
 import Login from "./Components/auth/Login";
-import Landing from "./Components/Landing"
+import Landing from "./Components/Landing";
+
+require("dotenv").config();
 
 function App() {
   return (
