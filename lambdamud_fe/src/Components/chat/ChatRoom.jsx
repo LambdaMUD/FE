@@ -45,13 +45,19 @@ class ChatRoom extends React.Component{
 
   _submitMessage = e => {
     e.preventDefault();
-
-    axios.post(
-        `https://lambdamud-be.herokuapp.com/api/adv/say/`, 
-        {message: this.state.inputValue}
-      )
-      .then(res => this.setState({ inputValue: "" }))
-      .catch(err => alert(`Error sending message: ${err}`))
+    if(this.state.inputValue){
+      axios.post(
+          `https://lambdamud-be.herokuapp.com/api/adv/say/`, 
+          {message: this.state.inputValue},
+          {
+            headers: {
+              Authorization: `token ${localStorage.getItem('authToken')}`
+            }
+          }
+        )
+        .then(res => this.setState({ inputValue: "" }))
+        .catch(err => alert(`Error sending message: ${err}`))
+    }
   }
 
   render(){
