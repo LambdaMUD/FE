@@ -102,7 +102,7 @@ const Register = props => {
               <FormText className='text-muted'>The passwords have to match.</FormText>
 
               <FormSubmit type='submit'>
-                Submit
+                Register
               </FormSubmit>
               <Link to="/login">
                 <FormText>Already a MUDDER?</FormText>
