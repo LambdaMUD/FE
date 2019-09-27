@@ -8,6 +8,10 @@
   font-family: 'Alfa Slab One', cursive;
 }
 
+.buttons{
+  margin: 10px;
+}
+
 @media(max-width: 1100px){
   .game_container{
     flex-direction: column-reverse;

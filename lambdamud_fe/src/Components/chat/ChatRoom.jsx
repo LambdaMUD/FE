@@ -47,7 +47,7 @@ class ChatRoom extends React.Component{
     e.preventDefault();
     if(this.state.inputValue){
       axios.post(
-          `https://lambdamud-be.herokuapp.com/api/adv/say/`, 
+          `https://lambdamud-be.herokuapp.com/api/adv/say/`,
           {message: this.state.inputValue},
           {
             headers: {
@@ -61,6 +61,8 @@ class ChatRoom extends React.Component{
   }
 
   render(){
+    const username = this.props.username
+    console.log(username)
     const {inputValue, messages} = this.state;
 
     return(
