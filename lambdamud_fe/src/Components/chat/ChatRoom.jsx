@@ -61,17 +61,15 @@ class ChatRoom extends React.Component{
   }
 
   render(){
-    const username = this.props.username
-    console.log(username)
     const {inputValue, messages} = this.state;
-
+    console.log(this.props.username)
     return(
       <ChatContainer>
         <Chat>
           {messages.map((m, i) => {
             return (
-              <Message key={i} sent={true}>
-                {m.message}
+              <Message key={i} sent={this.props.username === m.username}>
+                {m.username}: {m.message}
               </Message>
             )
           })}
