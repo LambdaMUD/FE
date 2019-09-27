@@ -14,10 +14,16 @@ export const Row = styled.div`
   display: flex;
 `;
 export const Room = styled.div`
-  /* border: 2px solid darkgray; */
   text-align: center;
   width: 75px;
   height: 75px;
+  @media (max-width: 850px) {
+    width: 50px;
+    height: 50px;
+    img {
+      height: 80%;
+    }
+  }
 `;
 class GameBoard extends React.Component {
   render() {
