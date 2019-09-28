@@ -1,9 +1,11 @@
-.game_info{
+.game_info {
   min-width: 400px;
   width: 40%;
   margin: 0 auto;
-}
-
-@media(max-width: 1100px){
-  min-width: 400px
+  @media (max-width: 1100px) {
+    min-width: 400px;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 15px;
+  }
 }
