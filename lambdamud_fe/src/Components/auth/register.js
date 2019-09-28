@@ -1,15 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {
-  Form,
-  FormInput,
-  FormSubmit,
-  FormText,
-  FormLabel,
-  FormHeader,
-  Background,
-  Body
-} from "../Custom/index";
+import { Form, FormInput, FormSubmit, FormText, FormLabel, FormHeader, Background, Body } from "../Custom/index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle, faLock } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -66,52 +57,50 @@ const Register = props => {
   return (
     <>
       {ErrorText && <div>{ErrorText}</div>}
-    <Body>
-          <Background>
-            <Form onSubmit={registerHandler}>
-              <FormHeader>Lambda MUD</FormHeader>
+      <Body>
+        <Background>
+          <Form onSubmit={registerHandler}>
+            <FormHeader>Lambda MUD</FormHeader>
 
-                <FormLabel name="User Name">
-                  <FontAwesomeIcon icon={faUserCircle} />
-                  <FormInput
-                    type='text'
-                    placeholder='Enter your user name'
-                    name='username'
-                    value={username}
-                    onChange={e => setUsername(e.target.value)}
-                  />
-                </FormLabel>
+            <FormLabel name='User Name'>
+              <FontAwesomeIcon icon={faUserCircle} />
+              <FormInput
+                type='text'
+                placeholder='Username'
+                name='username'
+                value={username}
+                onChange={e => setUsername(e.target.value)}
+              />
+            </FormLabel>
 
-                <FormLabel name="Password1">
-                  <FontAwesomeIcon icon={faLock} />
-                  <FormInput
-                    type='password'
-                    placeholder='Password'
-                    name='password1'
-                    value={password1}
-                    onChange={e => setPassword1(e.target.value)}
-                  />
-                </FormLabel>
+            <FormLabel name='Password1'>
+              <FontAwesomeIcon icon={faLock} />
+              <FormInput
+                type='password'
+                placeholder='Password'
+                name='password1'
+                value={password1}
+                onChange={e => setPassword1(e.target.value)}
+              />
+            </FormLabel>
 
-                <FormLabel name="Password2">
-                  <FontAwesomeIcon icon={faLock} />
-                  <FormInput
-                    type='password'
-                    placeholder='Re-enter Password'
-                    name='password2'
-                    value={password2}
-                    onChange={e => setPassword2(e.target.value)}
-                  />
-                </FormLabel>
+            <FormLabel name='Password2'>
+              <FontAwesomeIcon icon={faLock} />
+              <FormInput
+                type='password'
+                placeholder='Re-enter Password'
+                name='password2'
+                value={password2}
+                onChange={e => setPassword2(e.target.value)}
+              />
+            </FormLabel>
 
-              <FormSubmit type='submit'>
-                Register
-              </FormSubmit>
-              <Link to="/login">
-                <FormText>Already a MUDDER?</FormText>
-              </Link>
+            <FormSubmit type='submit'>Register</FormSubmit>
+            <Link to='/login'>
+              <FormText>Already a MUDDER?</FormText>
+            </Link>
           </Form>
-          </Background>
+        </Background>
       </Body>
     </>
   );

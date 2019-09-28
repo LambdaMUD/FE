@@ -1,88 +1,129 @@
-.game_board_container{
+.game_board_container {
   min-width: 750px;
   width: 50%;
 }
 
-.game_board_container h1{
+.game_board_container h1 {
   font-family: $AlfaSlab;
 }
 
-.game_board{
+.game_board {
   border: 1px solid black;
 }
 
-
-.northsoutheastwest{
-    border-image-source: url("../public/images/grey_brick.png");
-    border-image-slice: 10 10 10 10;
-    border-image-width: 10px 10px 10px 10px;
+.northsoutheastwest {
+  border-image-source: url("../public/images/grey_brick.png");
+  border-image-slice: 10 10 10 10;
+  border-image-width: 10px 10px 10px 10px;
 }
-.northsoutheast{
-    border-image-source: url("../public/images/grey_brick.png");
-    border-image-slice: 10 10 10 0;
-    border-image-width: 10px 10px 10px 0;
+.northsoutheast {
+  border: 2px solid darkgray;
+  border-left: none;
+  border-image-source: url("../public/images/grey_brick.png");
+  border-image-slice: 10 10 10 0;
+  border-image-width: 10px 10px 10px 0;
 }
-.northsouthwest{
-    border-image-source: url("../public/images/grey_brick.png");
-    border-image-slice: 10 0 10 10;
-    border-image-width: 10px 0 10px 10px;
+.northsouthwest {
+  border: 2px solid darkgray;
+  border-right: none;
+  border-image-source: url("../public/images/grey_brick.png");
+  border-image-slice: 10 0 10 10;
+  border-image-width: 10px 0 10px 10px;
 }
-.northeastwest{
-    border-image-source: url("../public/images/grey_brick.png");
-    border-image-slice: 10 10 0 10;
-    border-image-width: 10px 10px 0 10px;
+.northeastwest {
+  border: 2px solid darkgray;
+  border-bottom: none;
+  border-image-source: url("../public/images/grey_brick.png");
+  border-image-slice: 10 10 0 10;
+  border-image-width: 10px 10px 0 10px;
 }
-.northsouth{
-    border-image-source: url("../public/images/grey_brick.png");
-    border-image-slice: 10 0 10 0;
-    border-image-width: 10px 0 10px 0;
+.northsouth {
+  border: 2px solid darkgray;
+  border-left: none;
+  border-right: none;
+  border-image-source: url("../public/images/grey_brick.png");
+  border-image-slice: 10 0 10 0;
+  border-image-width: 10px 0 10px 0;
 }
-.northeast{
-    border-image-source: url("../public/images/grey_brick.png");
-    border-image-slice: 10 10 0 0;
-    border-image-width: 10px 10px 0 0;
+.northeast {
+  border: 2px solid darkgray;
+  border-bottom: none;
+  border-left: none;
+  border-image-source: url("../public/images/grey_brick.png");
+  border-image-slice: 10 10 0 0;
+  border-image-width: 10px 10px 0 0;
 }
-.northwest{
-    border-image-source: url("../public/images/grey_brick.png");
-    border-image-slice: 10 0 0 10;
-    border-image-width: 10px 0 0 10px;
+.northwest {
+  border: 2px solid darkgray;
+  border-bottom: none;
+  border-right: none;
+  border-image-source: url("../public/images/grey_brick.png");
+  border-image-slice: 10 0 0 10;
+  border-image-width: 10px 0 0 10px;
 }
-.southeastwest{
-    border-image-source: url("../public/images/grey_brick.png");
-    border-image-slice: 0 10 10 10;
-    border-image-width: 0 10px 10px 10px;
+.southeastwest {
+  border: 2px solid darkgray;
+  border-top: none;
+  border-image-source: url("../public/images/grey_brick.png");
+  border-image-slice: 0 10 10 10;
+  border-image-width: 0 10px 10px 10px;
 }
-.southeast{
+.southeast {
+  border: 2px solid darkgray;
+  border-top: none;
+  border-left: none;
   border-image-source: url("../public/images/grey_brick.png");
   border-image-slice: 0 10 10 0;
   border-image-width: 0 10px 10px 0;
 }
-.southwest{
+.southwest {
+  border: 2px solid darkgray;
+  border-top: none;
+  border-right: none;
   border-image-source: url("../public/images/grey_brick.png");
   border-image-slice: 0 0 10 10;
   border-image-width: 0 0 10px 10px;
 }
-.eastwest{
+.eastwest {
+  border: 2px solid darkgray;
+  border-top: none;
+  border-bottom: none;
   border-image-source: url("../public/images/grey_brick.png");
   border-image-slice: 0 10 0 10;
   border-image-width: 0 10px 0 10px;
 }
-.north{
+.north {
+  border: 2px solid darkgray;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
   border-image-source: url("../public/images/grey_brick.png");
   border-image-slice: 10 0 0 0;
   border-image-width: 10px 0 0 0;
 }
-.south{
+.south {
+  border: 2px solid darkgray;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   border-image-source: url("../public/images/grey_brick.png");
   border-image-slice: 0 0 10 0;
   border-image-width: 0 0 10px 0;
 }
-.east{
+.east {
+  border: 2px solid darkgray;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
   border-image-source: url("../public/images/grey_brick.png");
   border-image-slice: 0 10 0 0;
   border-image-width: 0 10px 0 0;
 }
-.west{
+.west {
+  border: 2px solid darkgray;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
   border-image-source: url("../public/images/grey_brick.png");
   border-image-slice: 0 0 0 10;
   border-image-width: 0 0 0 10px;
@@ -92,6 +133,6 @@
   background-image: url("../public/images/end_door.png");
 }
 
-.room{
+.room {
   background-image: url("../public/images/green_grass.png");
 }
