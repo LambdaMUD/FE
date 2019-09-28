@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import config from "../../Config/index";
 import {
     Form,
@@ -15,6 +14,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle, faLock } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
+/**
+ * Login Component allows user to login to their existing account
+ * Sends credentials object to the API with a username and password
+ * Expects from the API a response with a token, validating they are a registered user
+ */
 
 class Login extends Component {
     constructor() {
@@ -26,11 +30,22 @@ class Login extends Component {
         };
     }
 
+    /**
+   * inputHandled sets user input to state, to accurately reflect their input and save for form submission
+   * params: event, that triggers the function from user action.
+   */
+
     inputHandler = e => {
         this.setState({
             [e.target.name]: e.target.value
         });
     };
+
+    /**
+   * submits user inputs to the API endpoint to login
+   * If successful, sets the user's token to localStorage. If unsuccessful, logs error.
+   * params event that triggers the function from user submitting form
+   */
 
     submitHandler = e => {
         e.preventDefault();
@@ -43,7 +58,7 @@ class Login extends Component {
             loading: true
         });
 
-        axios
+        config
             .post(`${config.baseURL}/`, credentials)
             .then(res => {
                 localStorage.setItem("authToken", res.data.token);

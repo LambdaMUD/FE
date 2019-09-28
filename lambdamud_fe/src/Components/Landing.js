@@ -8,6 +8,9 @@ import {
 } from "./Custom/index"
 import { Link } from "react-router-dom";
 
+/**
+ * Landing allows a user to follow links register for a new account or login if they are returning
+ */
 
 const Landing = () => {
     return (
