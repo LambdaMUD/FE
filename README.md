@@ -1,4 +1,4 @@
-#LambdaMUD - Maze Game Application
+# LambdaMUD - Maze Game Application
 <p align="center">
   <img alt="LambdaMud Home Page" src="https://github.com/LambdaMUD/FE/blob/david-chua/lambdamud_fe/src/public/images/landing_page.png">
 </p>
@@ -8,18 +8,30 @@ DEMO: https://lambdamud-game.netlify.com
 
 ## Table of Contents
 
+* [Instructions](#Instructions)
 * [Technologies](#Technologies)
 * [Setup](#Setup)
 * [Authors](#Authors)
 * [Netlify](#Netlify)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Instructions
 
+The game's goal is to get your character to move through the maze and reach the door.
+To move, you can control the characters using the following:
+
+* Use the buttons in the game.
+* Or use the following:
+
+    * press "W" to move up
+    * press "A" to move left
+    * press "S" to move down
+    * press "D" to move right
+    
 ## Technologies
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-##  Languages & tools
+###  Languages & tools
 
 ### [](https://gist.github.com/MoOx/4378f7c43f6e948e7216#html)HTML
 
@@ -53,7 +65,6 @@ Or to use our live project to get started:
 * [David Chua](https://github.com/david-chua)
 * [Kieran Vieira](https://github.com/orgs/LambdaMUD/people/KieranVieira)
 * [Erin-Ronae Scriber](https://github.com/orgs/LambdaMUD/people/erscriber)
-
 
 ## Netlify
 
