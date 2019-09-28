@@ -5,6 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle, faLock } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
+/**
+ * Register allows a user to register for a new account
+ * Sends a credentials object to the API with username, password1, and password2, where password1 and password2 should match
+ * Awaits an object response from API with a key to set to user's localStorage, to verify they are a valid registered user
+ */
+
 const Register = props => {
   const [username, setUsername] = useState("");
   const [password1, setPassword1] = useState("");
@@ -33,7 +39,7 @@ const Register = props => {
         setPassword1("");
         setPassword2("");
         setErrorText("");
-        props.history.push("/login");
+        props.history.push("/gameboard");
       })
       .catch(error => {
         console.log(error.response.data);
