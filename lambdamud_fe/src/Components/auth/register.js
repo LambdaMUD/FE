@@ -35,7 +35,7 @@ const Register = props => {
       .post(endpoint, user)
       .then(response => {
         console.log(response.data);
-        localStorage.setItem("authToken", res.data.key);
+        localStorage.setItem("authToken", response.data.key);
         setUsername("");
         setPassword1("");
         setPassword2("");
