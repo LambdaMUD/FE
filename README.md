@@ -1,103 +1,71 @@
+# LambdaMUD - Maze Game Application
+<p align="center">
+  <img alt="LambdaMud Home Page" src="https://github.com/LambdaMUD/FE/blob/david-chua/lambdamud_fe/src/public/images/landing_page.png">
+</p>
+
+A mini maze game
+DEMO: https://lambdamud-game.netlify.com
+
+## Table of Contents
+
+* [Instructions](#Instructions)
+* [Technologies](#Technologies)
+* [Setup](#Setup)
+* [Authors](#Authors)
+* [Netlify](#Netlify)
+
+## Instructions
+
+The game's goal is to get your character to move through the maze and reach the door.
+To move, you can control the characters using the following:
+
+* Use the buttons in the game.
+* Or use the following:
+
+    * press "W" to move up
+    * press "A" to move left
+    * press "S" to move down
+    * press "D" to move right
+    
+## Technologies
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-  
-##  Languages & tools
+###  Languages & tools
 
 ### [](https://gist.github.com/MoOx/4378f7c43f6e948e7216#html)HTML
 
--   [HTML5]([https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5))
+- [HTML5]([https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5))
 
 ### [](https://gist.github.com/MoOx/4378f7c43f6e948e7216#javascript)JavaScript
 
--   [React](http://facebook.github.io/react)  is used for UI.
+-   [React](http://facebook.github.io/react) was used for UI.
 
 ### [](https://gist.github.com/MoOx/4378f7c43f6e948e7216#css)CSS/SASS
 
--   [styled components](http://[https://www.styled-components.com/](https://www.styled-components.com/))  were used to write CSS for the landing page, registration and login.
--	[SASS](http://[https://www.styled-components.com/](https://www.styled-components.com/)) was used for the game board.
+- [Styled Components](https://www.styled-components.com/) was used to write CSS for the landing page, registration and login.
+-	[SASS](https://www.styled-components.com/) was used for the game board.
+- [React-Bootstrap](https://react-bootstrap.github.io) was used for the modal.
 
-## Available Scripts
+## Setup
 
-  
+To run this project, install it locally using npm:
 
-In the project directory, you can run:
+    $ cd client/
+    $ npm install
+    $ npm start
 
-  
+Or to use our live project to get started:
 
-### `npm start`
+[LambdaMUD](https://lambdamud-game.netlify.com)
 
-  
+## Authors
 
-Runs the app in the development mode.<br>
+* [Leila Berrouayel](https://github.com/leila100)
+* [David Chua](https://github.com/david-chua)
+* [Kieran Vieira](https://github.com/orgs/LambdaMUD/people/KieranVieira)
+* [Erin-Ronae Scriber](https://github.com/orgs/LambdaMUD/people/erscriber)
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-  
-
-The page will reload if you make edits.<br>
-
-You will also see any lint errors in the console.
-
-  
-
-###  `npm test`
-
-  
-
-Launches the test runner in the interactive watch mode.<br>
-
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-  
-
-###  `npm run build`
-
-  
-
-Builds the app for production to the `build` folder.<br>
-
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-  
-
-The build is minified and the filenames include the hashes.<br>
-
-Your app is ready to be deployed!
-
-  
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-  
-
-###  `npm run eject`
-
-  
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-  
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-  
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-  
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-  
-
-##  Learn More
-
-  
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-
-## Static server with Netlify
+## Netlify
 
 The app embed for development a static connect server with Netlify. So each time you start the app, you get automatic refresh in the browser whenever you update a file.
-
