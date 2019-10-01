@@ -25,7 +25,8 @@ class Game extends React.Component {
       player: null,
       chosenCharacter: wizard,
       finished: false,
-      openModal: false
+      openModal: false,
+      username: ""
     };
   }
 
@@ -131,6 +132,7 @@ class Game extends React.Component {
               row: res.data.row,
               column: res.data.column
             },
+            username: res.data.name,
             players: res.data.players,
             openModal: false
           });
